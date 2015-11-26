@@ -2,9 +2,13 @@
 set -m
 
 mongodb_cmd="mongod"
-cmd="$mongodb_cmd --httpinterface --rest --master"
+cmd="$mongodb_cmd  --master"
 if [ "$AUTH" == "yes" ]; then
     cmd="$cmd --auth"
+fi
+
+if [ "$REPLSET != "" ]; then
+    cmd="$cmd --replSet $REPLSET"
 fi
 
 if [ "$JOURNALING" == "no" ]; then
