@@ -7,7 +7,7 @@ if [ "$AUTH" == "yes" ]; then
     cmd="$cmd --auth"
 fi
 
-if [ "$REPLSET != "" ]; then
+if [ "$REPLSET" != "" ]; then
     cmd="$cmd --replSet $REPLSET"
 fi
 
