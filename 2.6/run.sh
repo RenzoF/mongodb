@@ -29,4 +29,8 @@ if [ ! -f /data/db/.mongodb_password_set ]; then
     fi
 fi
 
+if [ "$EXTCMD" != "" ]; then
+    $EXTCMD
+fi
+
 fg
