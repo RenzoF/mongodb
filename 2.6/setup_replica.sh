@@ -9,6 +9,6 @@ while [[ RET -ne 0 ]]; do
 done
 
 echo "=> Seting up replica"
-mongo --eval "if (rs.conf() == null){rs.inititalize();}"
+mongo $MONGOHOST --eval "if (rs.conf() == null){rs.inititalize();}"
 
 echo "=> Done!"
