@@ -17,8 +17,9 @@ ENV AUTH yes
 ENV JOURNALING yes
 
 ADD run.sh /run.sh
-ADD set_mongodb_password.sh /set_mongodb_password.sh
 ADD setup_replica.sh /setup_replica.sh
+ADD set_mongodb_password.sh /set_mongodb_password.sh
+
 EXPOSE 27017 28017
 
 CMD ["/run.sh"]
