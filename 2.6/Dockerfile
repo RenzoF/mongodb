@@ -18,7 +18,7 @@ ENV JOURNALING yes
 
 ADD run.sh /run.sh
 ADD set_mongodb_password.sh /set_mongodb_password.sh
-ADD setup_replica.sh /setup_relpica.sh
+ADD setup_replica.sh /setup_replica.sh
 EXPOSE 27017 28017
 
 CMD ["/run.sh"]
