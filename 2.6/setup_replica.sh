@@ -7,7 +7,7 @@ while [[ RET -ne 0 ]]; do
     RET=$?
 done
 echo "=> Seting up replica"
-addcmd = "rs.add"
+addcmd="rs.add"
 if [ "$ISARB" == "yes" ]; then
     addcmd="$addcmdArb"
 fi
