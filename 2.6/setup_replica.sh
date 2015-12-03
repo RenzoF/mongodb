@@ -7,5 +7,9 @@ while [[ RET -ne 0 ]]; do
     RET=$?
 done
 echo "=> Seting up replica"
-mongo $MONGOHOST --eval "if (rs.conf() == null){rs.initiate();} else {rs.add('$HOSTNAME:27017');}"
+addcmd = "rs.add"
+if [ "$ISARB" == "yes" ]; then
+    addcmd="$addcmdArb"
+fi
+mongo $MONGOHOST --eval "if (rs.conf() == null){rs.initiate();} else {$addcmd('$HOSTNAME:27017');}"
 echo "=> Done!"
